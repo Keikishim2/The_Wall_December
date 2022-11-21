@@ -11,8 +11,6 @@
   src: url('../../assets/fonts/Roboto-Medium.ttf');
 }
 body {
-  background-repeat: no-repeat;
-  background-size: cover;
   background: #6E717D;
 }
 .error {
@@ -37,8 +35,8 @@ body {
   width: 100%;
 }
 #signup_login_page .login_wrapper::after {
-  background-color: #3b3c43;
   background-image: url("../../assets/images/right_panel_sign_up_in.svg");
+  background-color: #3b3c43;
   background-position-y: -35px;
   background-repeat: no-repeat;
   border-radius: 0px 20px 20px 0px;
@@ -52,8 +50,8 @@ body {
   width: 205px;
 }
 #signup_login_page .login_wrapper::before {
-  background-repeat: no-repeat;
   background: url("../../assets/images/the_wall_big_logo.svg");
+  background-repeat: no-repeat;
   content: '';
   display: block;
   height: 150px;
@@ -70,8 +68,8 @@ body {
 }
 #signup_login_page .welcome::before {
   content: '';
-  background-repeat: no-repeat;
   background: url("../../assets/images/the_wall_icon.svg");
+  background-repeat: no-repeat;
   display: block;
   height: 115px;
   left: 77px;

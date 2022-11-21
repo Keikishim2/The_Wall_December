@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is the Wall Sign up page">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Wall-E</title>
+    <link rel="shortcut icon" href="../../assets/images/wall.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+</head>
+<body>
+    <section id="signup_login_page">
+        <div class="login_wrapper">
+            <div class="welcome">
+                <h2>Welcome</h2>
+                <p>Register a new account</p>
+            </div>
+            <form action="/login.html" id="signup_form" class="form" method="POST">
+                <div class="input">
+                    <label for="first_name">First Name
+                        <input type="text" name="first_name" id="first_name" placeholder="FIRST NAME">
+                    </label>
+                </div>
+                <div class="input">
+                    <label for="last_name">Last Name
+                        <input type="text" name="last_name" id="last_name" placeholder="LAST NAME">
+                    </label>
+                </div>
+                <label for="email_address">Email Address
+                    <input type="text" name="email" id="email_address" placeholder="EMAIL ADDRESS">
+                    </label>
+                <label for="password">Password
+                    <input type="password" name="password" id="password" placeholder="PASSWORD">
+                </label>
+                <input type="submit" name="submit" id="submit_btn" value="Sign Up">
+                <a href="login.html" id="create">Already have an account? <span>Log in</span></a>
+            </form>
+        </div>
+    </section>
+    <script src="../../assets/js/global.js"></script>
+    <script src="../../assets/js/signup.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
  * @author: Kei Kishimoto
  */
 function checkFirstName(input){
-    let name = /^[A-Za-z]+$/;
+    const name = /^[A-Za-z]+$/;
     if(input.value.match(name)){
         showSuccess(input);
     }else{
@@ -20,7 +20,7 @@ function checkFirstName(input){
  * @author: Kei Kishimoto
  */
  function checkLastName(input){
-    let last = /^[A-Za-z]+$/;
+    const last = /^[A-Za-z]+$/;
     if(input.value.match(last)){
         showSuccess(input);
     }else{

@@ -26,7 +26,7 @@ function displayPost(event){
 
     if (add_post.value.trim() === "") {
         forms.className = "add_post error";
-    } else {
+    }else{
         forms.classList.remove("error");
         comment_wrapper.setAttribute("class", "comment_wrapper");
         comment_wrapper.querySelector("p").innerHTML = add_post.value;

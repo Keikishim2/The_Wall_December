@@ -20,9 +20,9 @@
 }
 
 body{
-    background: #6E717D;
     background-repeat: no-repeat;
     background-size: cover;
+    background: #6E717D;
 }
 .error{
     border: 1px solid @error !important;
@@ -38,10 +38,10 @@ body{
         display: block;
         height: 671px;
         margin: 80px auto 0px auto;
+        max-width: 876px;
         position: relative;
         transition: 0.21s;
         vertical-align: top;
-        max-width: 876px;
         width: 100%;
         &::after {
             background-color: @dark;
@@ -59,16 +59,16 @@ body{
             width: 205px;
         }
         &::before{
-            content: '';
+            background-repeat: no-repeat;
             background: url("../../assets/images/the_wall_big_logo.svg");
+            content: '';
             display: block;
             height: 150px;
             position: absolute;
+            right: 17px;
+            top: 75px;
             width: 138px;
             z-index: 999;
-            top: 75px;
-            right: 17px;
-            background-repeat: no-repeat;
         }
     }
     .welcome{
@@ -77,15 +77,15 @@ body{
         text-align: left;
         &::before{
             content: '';
+            background-repeat: no-repeat;
             background: url("../../assets/images/the_wall_icon.svg");
             display: block;
             height: 115px;
+            left: 77px;
             position: absolute;
+            top: 76px;
             width: 104px;
             z-index: 999;
-            top: 76px;
-            left: 77px;
-            background-repeat: no-repeat;
         }
         h2{
             color: @white;
@@ -114,29 +114,29 @@ body{
             color: @gray;
             display: block;
             font: 14px/16px 'Roboto-Medium', sans-serif;
-            vertical-align: top;
             line-height: 21px;
             text-align: left;
+            vertical-align: top;
         }
         input {
-            width: 100%;
             background-color: #31354F;
             border-radius: 9px;
             border: 1px solid #31354F;
+            color: @white;
             height: 60px;
             margin: 5px 0px 13px;
-            transition: 0.21s;
             outline: none;
             padding-left: 15px;
-            color: @white;
+            transition: 0.21s;
+            width: 100%;
             &:focus {
                 border: 1px solid @link;
             }
 
         }
         .input {
-            max-width: 230px;
             display: inline-table;
+            max-width: 230px;
             vertical-align: top;
             &:nth-child(1) {
                 margin-right: 35px;
@@ -158,10 +158,10 @@ body{
                 opacity: 0.8;
             }
             >span {
-                font: 21px/24px 'Roboto-Regular', sans-serif;
                 color: @white;
-                vertical-align: top;
                 display: inline-block;
+                font: 21px/24px 'Roboto-Regular', sans-serif;
+                vertical-align: top;
             }
             img {
                 display: none;
@@ -213,8 +213,8 @@ body{
         }
         .login_wrapper{
             height: auto;
-            padding-top: 20px;
             padding-bottom: 50px;
+            padding-top: 20px;
             &::after, &::before{
                 display: none;
             }

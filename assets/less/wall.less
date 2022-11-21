@@ -49,15 +49,15 @@ nav{
         position: relative;
         margin: 0 0 0 60px;
         &::before{
-            content: '';
             background-image: url("../images/the_wall_small_logo.svg");
-            position: absolute;
+            content: '';
+            background-repeat: no-repeat;
+            display: block;
+            height: 40px;
             left: -25px;
             margin: 0 0 0 -10px;
+            position: absolute;
             width: 40px;
-            height: 40px;
-            display: block;
-            background-repeat: no-repeat
         }
     }
     >span{
@@ -139,9 +139,9 @@ section{
             background-color: @post_wall;
             border-radius: 20px;
             display: flex;
+            height: 48px;
             margin: 55px auto;
             max-width: 978px;
-            height: 48px;
             overflow: hidden;
             padding: 16px;
             &:focus{
@@ -156,8 +156,8 @@ section{
                 border: 0;
                 color: @white;
                 font: 17px/25px 'Roboto-Regular', sans-serif;
-                padding-top: 20px;
                 outline: none;
+                padding-top: 20px;
                 resize: none;
                 width: 100%;
                 &::placeholder{
@@ -166,15 +166,15 @@ section{
             }
             #post_btn{
                 background-color: @link;
-                opacity: 0.9;
                 border-radius: 8.86px;
                 color: @white;
                 cursor: pointer;
                 display: block;
-                width: 100px;
                 height: 38px;
                 margin: 0 0 0 auto;
+                opacity: 0.9;
                 transition: all 0.21s ease-in-out;
+                width: 100px;
                 &:hover{
                     opacity: 0.8;
                 }
@@ -201,8 +201,8 @@ section{
                 p{
                     background: transparent;
                     color: @white;
-                    font: 16px/25px 'Roboto-Italic', sans-serif;
                     font-style: italic;
+                    font: 16px/25px 'Roboto-Italic', sans-serif;
                     margin: 0px auto 15px;
                 }
                 
@@ -223,11 +223,11 @@ section{
                         font: 16px/25px 'Roboto-Italic', sans-serif;
                         height: 80px;
                         margin: 30px auto;
+                        max-width: 978px;
                         padding-left: 15px;
                         position: relative;
-                        max-width: 978px;
-                        width: 100%;
                         resize: none;
+                        width: 100%;
                         &.error{
                             border: 1px solid @error !important;
                         }
@@ -236,12 +236,12 @@ section{
                         }
                     }
                     .add_reply{
-                        margin: 0 0 0 0;
-                        transform: translateY(-97px);
-                        right: 43px;
                         height: 38px;
-                        width: 100px;
+                        margin: 0 0 0 0;
                         position: absolute;
+                        right: 43px;
+                        transform: translateY(-97px);
+                        width: 100px;
 
                     }
                     .cancel_reply{
@@ -280,13 +280,13 @@ section{
 
 button{
     background-color: @link;
-    opacity: 0.9;
     border-radius: 8.86px;
     border: 1px solid @border;
     color: @white;
     cursor: pointer;
     line-height: 32px;
     margin-right: 8px;
+    opacity: 0.9;
     padding: 0 8px;
     transition: all 0.21s ease-in-out;
     &:hover {
@@ -296,8 +296,8 @@ button{
         align-items: center;
         background-color: @darker;
         display: inline-flex;
-        margin: -37px auto;
         float: right;
+        margin: -37px auto;
         &::after{
             background-image: url("../images/the_wall_sprite_icon.svg");
             background-position: 6px 10px;
@@ -334,7 +334,7 @@ button{
         font: 12px/25px 'Roboto-Regular', sans-serif;
         line-height: 24px;
         padding: 5px;
-        width: 115px;
         transform: translateY(15px);
+        width: 115px;
     }
 }

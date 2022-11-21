@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="This is Main Wall where everyone can express themselves">
+    <meta name="author" content="Kei Kishimoto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the Wall where everyone can express themselves.">
-    <meta name="author" content="Kei Kishimoto">
-    <title>The Wall Main</title>
-    <link rel="shortcut icon" href="../../assets/images/wall.ico" type="image/x-icon">
+    <title>The Main Wall</title>
+    <link rel="shortcut icon" href="../../assets/images/wall.ico">
     <link rel="stylesheet" href="../../assets/css/wall.css">
 </head>
 <body>
@@ -24,28 +24,28 @@
         <h1>Hello Kei,</h1>
         <p>Welcome to V88 Forum Dashboard</p>
         <div class="main_wall">
-            <form class="add_post" method="POST" action="#">
-                <textarea class="post_it" placeholder="Care to share?"></textarea>
+            <form action="#" class="add_post" method="POST">
+                <textarea class="post_it" placeholder="Care to Share?"></textarea>
                 <button type="submit" id="post_btn">Post</button>
             </form>
             <h3>Recent Forums</h3>
             <div class="comment_thread">
                 <div class="comment_wrapper hidden">
                     <p></p>
-                    <h5 class="name">Kei Kishimoto (few seconds ago)</h5>
+                    <h5 class="name">Kei Kishimoto (few seconds ago) </h5>
                     <button type="button" class="reply">Add Comment</button>
                     <button type="button" class="edit_comment"></button>
                     <button type="button" class="delete_comment"></button>
                     <div class="reply_content hidden">
                         <p class="replies"></p>
-                        <button class="reply">Add Reply</button>
-                        <button class="edit_comment"></button>
-                        <button class="delete_comment"></button>
+                        <button type="button" class="reply">Add Reply</button>
+                        <button type="button" class="edit_comment"></button>
+                        <button type="button" class="delete_comment"></button>
                     </div>
                 </div>
                 <div class="comments_replies hidden">
-                    <textarea class="reply_comment" placeholder="Say something..."></textarea>
-                    <button class="add_reply">Comment</button>
+                    <textarea class="reply_comment" placeholder="Say Something..."></textarea>
+                    <button type="button" class="add_reply">Comment</button>
                 </div>
             </div>
         </div>

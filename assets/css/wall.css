@@ -12,7 +12,7 @@
 }
 @font-face {
   font-family: 'Roboto-Italic';
-  src: url('../../assets/fonts/Roboto-Medium.ttf');
+  src: url('../../assets/fonts/Roboto-italic.ttf');
 }
 * {
   padding: 0;
@@ -31,6 +31,9 @@ nav {
   margin: 0 auto 42px;
   width: 100%;
 }
+nav > span {
+  display: none;
+}
 nav h1 {
   font: 21px/25px 'Roboto-Regular', sans-serif;
   opacity: 0.9;
@@ -38,18 +41,15 @@ nav h1 {
   margin: 0 0 0 60px;
 }
 nav h1::before {
-  background-image: url("../images/the_wall_small_logo.svg");
-  content: '';
+  background-image: url('../images/the_wall_small_logo.svg');
   background-repeat: no-repeat;
+  content: '';
   display: block;
   height: 40px;
   left: -25px;
   margin: 0 0 0 -10px;
   position: absolute;
   width: 40px;
-}
-nav > span {
-  display: none;
 }
 nav .logout {
   align-items: center;
@@ -67,7 +67,7 @@ nav .logout a {
   margin: 0 0 0 16px;
 }
 nav .logout a::before {
-  background-image: url("../images/the_wall_sprite_icon.svg");
+  background-image: url('../images/the_wall_sprite_icon.svg');
   background-position: -77px 1px;
   background-repeat: no-repeat;
   content: '';
@@ -89,7 +89,7 @@ nav .logout span {
     display: none;
   }
   nav > span {
-    background-image: url("../images/the_wall_sprite_icon.svg");
+    background-image: url('../images/the_wall_sprite_icon.svg');
     background-position: -77px 1px;
     background-repeat: no-repeat;
     content: '';
@@ -124,7 +124,7 @@ section .main_wall h3 {
 }
 section .main_wall .add_post {
   align-items: center;
-  background-color: #3a3c46;
+  background: #3a3c46;
   border-radius: 20px;
   display: flex;
   height: 48px;
@@ -162,8 +162,9 @@ section .main_wall .add_post #post_btn {
   height: 38px;
   margin: 0 0 0 auto;
   opacity: 0.9;
-  transition: all 0.21s ease-in-out;
+  transition: 0.21s;
   width: 100px;
+  border: none;
 }
 section .main_wall .add_post #post_btn:hover {
   opacity: 0.8;
@@ -196,7 +197,6 @@ section .main_wall .comment_thread .comment_wrapper p {
 }
 section .main_wall .comment_thread .comment_wrapper .reply_content {
   border-radius: 10px;
-  list-style-type: none;
   padding: 0 0px 24px 30px;
 }
 section .main_wall .comment_thread .comment_wrapper .reply_content .replies {
@@ -218,43 +218,18 @@ section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comme
   resize: none;
   width: 100%;
 }
-section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area.error {
-  border: 1px solid #eb5757 !important;
-}
 section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area:focus {
-  border: 1px solid #00a3ff !important;
+  border: 1px solid #00a3ff;
 }
 section .main_wall .comment_thread .comment_wrapper .comments_replies .add_reply {
   height: 38px;
-  margin: 0 0 0 0;
+  margin: 0 0 0;
   position: absolute;
   right: 43px;
   transform: translateY(-97px);
   width: 100px;
 }
-section .main_wall .comment_thread .comment_wrapper .comments_replies .cancel_reply {
-  margin: 0 0 0 8px;
-}
-@media screen and (max-width: 400px) {
-  section .main_wall .add_post {
-    padding: 10px;
-  }
-  section .main_wall .comment_thread .comment_wrapper {
-    padding: 30px 15px;
-  }
-  section .main_wall .comment_thread .comment_wrapper .reply_content .replies {
-    margin: 25px 0 0;
-  }
-  section .main_wall .comment_thread .comment_wrapper .comments_replies {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area {
-    font: 12px/25px 'Roboto-Italic', sans-serif;
-    padding-left: 10px;
-  }
-}
-button {
+section button {
   background-color: #00a3ff;
   border-radius: 8.86px;
   border: 1px solid #606066;
@@ -264,39 +239,39 @@ button {
   margin-right: 8px;
   opacity: 0.9;
   padding: 0 8px;
-  transition: all 0.21s ease-in-out;
+  transition: 0.21s;
 }
-button:hover {
+section button:hover {
   opacity: 0.8;
 }
-button.edit_comment {
+section button.edit_comment {
   align-items: center;
   background-color: #32333c;
   display: inline-flex;
   float: right;
   margin: -37px auto;
 }
-button.edit_comment::after {
-  background-image: url("../images/the_wall_sprite_icon.svg");
-  background-position: 6px 10px;
+section button.edit_comment::after {
+  background-image: url('../images/the_wall_sprite_icon.svg');
   background-repeat: no-repeat;
   content: '';
+  background-position: 6px 10px;
   height: 37px;
   transform: translateY(3px);
   width: 22px;
 }
-button.edit_comment:hover {
+section button.edit_comment:hover {
   filter: invert(1);
 }
-button.delete_comment {
+section button.delete_comment {
   align-items: center;
   background-color: #32333c;
   display: inline-flex;
   float: right;
   transform: translate(-39px, -37px);
 }
-button.delete_comment::after {
-  background-image: url("../images/the_wall_sprite_icon.svg");
+section button.delete_comment::after {
+  background-image: url('../images/the_wall_sprite_icon.svg');
   background-position: -16px 10px;
   background-repeat: no-repeat;
   content: '';
@@ -304,13 +279,34 @@ button.delete_comment::after {
   transform: translateY(3px);
   width: 22px;
 }
-button.delete_comment:hover {
+section button.delete_comment:hover {
   filter: invert(1);
 }
-button.reply {
+section button.reply {
   font: 12px/25px 'Roboto-Regular', sans-serif;
   line-height: 24px;
-  padding: 5px;
   transform: translateY(15px);
   width: 115px;
+}
+@media screen and (max-width: 400px) {
+  section .main_wall .add_post {
+    padding: 10px;
+  }
+  section .main_wall .comment_thread .comment_wrapper {
+    padding: 30px 15px;
+  }
+  section .main_wall .comment_thread .comment_wrapper .name {
+    font: 11px/15px 'Roboto-Regular', sans-serif;
+  }
+  section .main_wall .comment_thread .comment_wrapper .reply_content .replies {
+    margin: 25px 0 0;
+  }
+  section .main_wall .comment_thread .comment_wrapper .comments_replies {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area {
+    font: 12px/15px 'Roboto-Italic', sans-serif;
+    padding-left: 10px;
+  }
 }

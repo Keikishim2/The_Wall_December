@@ -1,39 +1,39 @@
 /**
- * DOCU: This function checks if the first name is valid else returns an error
- * Last Updated: Nov 20, 2022
- * @param input
- * @author: Kei Kishimoto
+ * DOCU: This function only allows alphabet for the first name field
+ * Last Updated: Nov 21, 2022
+ * @param input - The event object is a property of the Window object.
+ * @author Kei Kishimoto
  */
 function checkFirstName(input){
-    const name = /^[A-Za-z]+$/;
+    const name = /^[a-zA-Z]+$/;
     if(input.value.match(name)){
         showSuccess(input);
     }else{
         showError(input);
     }
- }
+}
 
- /**
- * DOCU: This function checks if the last name is valid else returns an error
- * Last Updated: Nov 20, 2022
- * @param input
- * @author: Kei Kishimoto
+/**
+ * DOCU: This function only allows alphabet for the last name field
+ * Last Updated: Nov 21, 2022
+ * @param input - The event object is a property of the Window object.
+ * @author Kei Kishimoto
  */
- function checkLastName(input){
-    const last = /^[A-Za-z]+$/;
-    if(input.value.match(last)){
+function checkLastName(input){
+    const name = /^[a-zA-Z]+$/;
+    if(input.value.match(name)){
         showSuccess(input);
     }else{
         showError(input);
     }
- }
+}
 
 /**
- * DOCU: This function is used to prevent the default behavior of the form, which is to submit the form and validate conditions on the form.
- * Last Updated: Nov 20, 2022
- * @author: Kei Kishimoto
+ * DOCU: This function runs validation before the form submits
+ * Last Updated: Nov 21, 2022
+ * @author Kei Kishimoto
  */
- signup_form.addEventListener("submit", function(e){
+signup_form.addEventListener("submit", function(e){
     e.preventDefault();
 
     checkValidation([first_name, last_name, email_address, password,]);

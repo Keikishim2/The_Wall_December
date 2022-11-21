@@ -11,7 +11,7 @@
   src: url('../../assets/fonts/Roboto-Medium.ttf');
 }
 body {
-  background: #6E717D;
+  background: #2C2D34;
 }
 .error {
   border: 1px solid #eb5757 !important;
@@ -23,24 +23,23 @@ body {
   position: relative;
 }
 #signup_login_page .login_wrapper {
-  background-color: #1D1F2B;
+  background-color: #1d1f2b;
   border-radius: 20px;
   display: block;
   height: 671px;
-  margin: 80px auto 0px auto;
+  margin: 80px auto 0 auto;
   max-width: 876px;
   position: relative;
-  transition: 0.21s;
   vertical-align: top;
   width: 100%;
 }
 #signup_login_page .login_wrapper::after {
-  background-image: url("../../assets/images/right_panel_sign_up_in.svg");
+  background-image: url('../../assets/images/right_panel_sign_up_in.svg');
   background-color: #3b3c43;
-  background-position-y: -35px;
+  background-position: -25px -48px;
   background-repeat: no-repeat;
   border-radius: 0px 20px 20px 0px;
-  content: "";
+  content: '';
   display: inline-block;
   height: 671px;
   position: absolute;
@@ -50,7 +49,7 @@ body {
   width: 205px;
 }
 #signup_login_page .login_wrapper::before {
-  background: url("../../assets/images/the_wall_big_logo.svg");
+  background: url('../../assets/images/the_wall_big_logo.svg');
   background-repeat: no-repeat;
   content: '';
   display: block;
@@ -61,15 +60,15 @@ body {
   width: 138px;
   z-index: 999;
 }
-#signup_login_page .welcome {
+#signup_login_page .login_wrapper .welcome {
   display: inline-block;
   margin: 72px 69px auto;
   text-align: left;
 }
-#signup_login_page .welcome::before {
-  content: '';
-  background: url("../../assets/images/the_wall_icon.svg");
+#signup_login_page .login_wrapper .welcome::before {
+  background: url('../../assets/images/the_wall_icon.svg');
   background-repeat: no-repeat;
+  content: '';
   display: block;
   height: 115px;
   left: 77px;
@@ -78,30 +77,24 @@ body {
   width: 104px;
   z-index: 999;
 }
-#signup_login_page .welcome h2 {
+#signup_login_page .login_wrapper .welcome h2 {
   color: #ffffff;
   font: 21px/24px 'Roboto-Regular', sans-serif;
   margin: 0px 0px 4px 76px;
   position: relative;
 }
-#signup_login_page .welcome p {
+#signup_login_page .login_wrapper .welcome p {
   color: #6d7186;
   font: 17px/21px 'Roboto-Regular', sans-serif;
-  margin: 0 0 0 78px;
+  margin: 0 0 0 76px;
 }
-#signup_login_page form {
+#signup_login_page .login_wrapper form {
   padding: 40px 300px 20px 77px;
 }
-#signup_login_page form#signup_form {
+#signup_login_page .login_wrapper form#signup_form {
   padding: 43px 300px 20px 77px;
 }
-#signup_login_page form small {
-  visibility: hidden;
-}
-#signup_login_page form .name {
-  display: inline-block;
-}
-#signup_login_page form label {
+#signup_login_page .login_wrapper form label {
   color: #6d7186;
   display: block;
   font: 14px/16px 'Roboto-Medium', sans-serif;
@@ -109,30 +102,30 @@ body {
   text-align: left;
   vertical-align: top;
 }
-#signup_login_page form input {
-  background-color: #31354F;
+#signup_login_page .login_wrapper form input {
+  background-color: #31354f;
   border-radius: 9px;
-  border: 1px solid #31354F;
+  border: 1px solid #31354f;
   color: #ffffff;
   height: 60px;
-  margin: 5px 0px 13px;
+  margin: 5px 0 13px;
   outline: none;
   padding-left: 15px;
-  transition: 0.21s;
+  transition: .21s;
   width: 100%;
 }
-#signup_login_page form input:focus {
+#signup_login_page .login_wrapper form input:focus {
   border: 1px solid #00a3ff;
 }
-#signup_login_page form .input {
-  display: inline-table;
+#signup_login_page .login_wrapper form .input {
+  display: inline-block;
   max-width: 230px;
   vertical-align: top;
 }
-#signup_login_page form .input:nth-child(1) {
+#signup_login_page .login_wrapper form .input:nth-child(1) {
   margin-right: 35px;
 }
-#signup_login_page form #submit_btn {
+#signup_login_page .login_wrapper form #submit_btn {
   background-color: #00a3ff;
   border-radius: 9px;
   border: none;
@@ -145,19 +138,10 @@ body {
   transition: 0.21s;
   width: 553px;
 }
-#signup_login_page form #submit_btn:hover {
+#signup_login_page .login_wrapper form #submit_btn:hover {
   opacity: 0.8;
 }
-#signup_login_page form #submit_btn > span {
-  color: #ffffff;
-  display: inline-block;
-  font: 21px/24px 'Roboto-Regular', sans-serif;
-  vertical-align: top;
-}
-#signup_login_page form #submit_btn img {
-  display: none;
-}
-#signup_login_page form a {
+#signup_login_page .login_wrapper form a {
   color: #6d7186;
   display: block;
   font: 17px/21px 'Roboto-Regular', sans-serif;
@@ -166,37 +150,41 @@ body {
   text-align: center;
   text-decoration: none;
 }
-#signup_login_page form a span {
+#signup_login_page .login_wrapper form a span {
   color: #00a3ff;
 }
 @media screen and (max-width: 891px) {
-  #signup_login_page .welcome {
+  #signup_login_page .login_wrapper .welcome {
     margin: 25px 6px auto;
   }
-  #signup_login_page .welcome::before {
+  #signup_login_page .login_wrapper .welcome::before {
     left: 24px;
     top: 32px;
   }
-  #signup_login_page .form {
+  #signup_login_page .login_wrapper .form {
     padding: 43px 248px 20px 25px;
   }
-  #signup_login_page .form#signup_form {
+  #signup_login_page .login_wrapper .form#signup_form {
     padding: 43px 250px 20px 25px;
   }
-  #signup_login_page .form .input {
+  #signup_login_page .login_wrapper .form .input {
     max-width: 100%;
     width: 100%;
   }
-  #signup_login_page .form .input:nth-child(1) {
+  #signup_login_page .login_wrapper .form .input:nth-child(1) {
     margin-right: 0px;
   }
-  #signup_login_page .form a {
+  #signup_login_page .login_wrapper .form #submit_btn {
+    max-width: 104%;
+    width: 631px;
+  }
+  #signup_login_page .login_wrapper .form a {
     margin: 0 auto;
   }
 }
 @media screen and (max-width: 585px) {
   #signup_login_page .welcome::before {
-    top: 49px;
+    top: 48px !important;
   }
   #signup_login_page .login_wrapper {
     height: auto;
@@ -205,9 +193,12 @@ body {
   }
   #signup_login_page .login_wrapper::after,
   #signup_login_page .login_wrapper::before {
-    display: none;
+    display: none !important;
   }
   #signup_login_page .form {
     padding: 20px 38px 0 20px !important;
+  }
+  #signup_login_page .form #submit_btn {
+    width: 105%;
   }
 }

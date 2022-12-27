@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const add_post = document.getElementById("post_btn");
     const fetch_all_thread = document.querySelector(".comment_thread");
+    const post_wall = document.querySelector("#post_wall");
 
     add_post.addEventListener("click", (e) => {
         displayPost(e);
@@ -9,8 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch_all_thread.addEventListener("click", (e) => {
         allCommentsReplies(e);
     });
-});
 
+    post_wall.addEventListener("click", (e) => {
+        triggerDeleteAction(e);
+    });
+});
 
 /**
  * DOCU: This function adds post to the wall if the field is not empty
@@ -57,7 +61,6 @@ function addComments(event){
         event.target.parentElement.remove();
     }
 }
-
 /**
  * DOCU: This function adds replies to the comments pertaining to the wall post if the field is not empty
  * Last Updated: Nov 21, 2022
@@ -74,8 +77,53 @@ function allCommentsReplies(event){
         
     }else if(match(event.target, "add_reply")){
         addComments(event);
-    }else if(match(event.target, "delete_comment")){
-        event.target.parentElement.remove();
+    }
+}
+
+/**
+ * DOCU: When the delete button is clicked, add the class 'active' to the parent element of the delete button.
+ * Last Updated: December 27, 2022
+ * @author Kei
+ */
+function deleteButton(){
+    const delete_button = document.querySelectorAll(".delete_comment");
+
+    for(let remove of delete_button){
+        remove.addEventListener("click", () => {
+            remove.closest(".delete_comment_container").classList.add("active");
+        });
+    }
+}
+
+/**
+ * DOCU: When the delete button is clicked, the delete button is removed and the delete action is triggered.
+ * Triggered By: post_wall.addEventListener("click", (e) => {triggerDeleteAction(e);
+ * Last Updated: December 27, 2022
+ * @author Kei
+ */
+function triggerDeleteAction(){
+    deleteButton();
+    actionsDelete();
+}
+
+/**
+ * DOCU: This function removes the comment_wrapper div when the yes_action button is clicked.
+ * Last Updated: December 27, 2022
+ * @author Kei
+ */
+function actionsDelete(){
+    const no_action = document.querySelectorAll(".no_action");
+    const yes_action = document.querySelectorAll(".yes_action");
+
+    for(let no of no_action){
+        no.addEventListener("click", () =>{
+            no.closest(".delete_comment_container").classList.remove("active");
+        });
+    }
+    for(let yes of yes_action){
+        yes.addEventListener("click", () =>{
+            yes.closest(".comment_wrapper").remove();
+        });
     }
 }
 

@@ -34,13 +34,23 @@
                     <p></p>
                     <h5 class="name">Kei Kishimoto (few seconds ago) </h5>
                     <button type="button" class="reply">Add Comment</button>
-                    <button type="button" class="edit_comment"></button>
-                    <button type="button" class="delete_comment"></button>
+                    <div class="actions">
+                        <button type="button" class="edit_comment"></button>
+                        <div class="delete_comment_container">
+                            <button type="button" class="delete_comment"></button>
+                            <p class="popup">Confirm Delete? <button type="button" class="action_button no_action">No</button><button type="button" class="action_button yes_action">Yes</button></p>
+                        </div>
+                    </div>
                     <div class="reply_content hidden">
                         <p class="replies"></p>
                         <button type="button" class="reply">Add Reply</button>
-                        <button type="button" class="edit_comment"></button>
-                        <button type="button" class="delete_comment"></button>
+                        <div class="actions">
+                            <button type="button" class="edit_comment"></button>
+                            <div class="delete_comment_container">
+                                <button type="button" class="delete_comment"></button>
+                                <p class="popup">Confirm Delete? <button type="button" class="action_button no_action">No</button><button type="button" class="action_button yes_action">Yes</button></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="comments_replies hidden">

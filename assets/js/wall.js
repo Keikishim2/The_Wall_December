@@ -15,21 +15,21 @@ function addPost(e){
     const text_post = document.querySelector("#text_post");
     const comments_thread = document.getElementById("comments_thread");
     const comments_wrapper = document.querySelector(".comments_wrapper.hidden").cloneNode(true);
-    const topic_text = comments_wrapper.querySelector(".topic_text");
+    const comment_text = comments_wrapper.querySelector(".comment_text");
 
     if(text_post.value.length == 0){
-        add_post.classList.add("input_error");
+        add_post.classList.add("error");
         add_post.classList.remove("active");
     }else{
         comments_wrapper.setAttribute("class", "comments_wrapper");
-        topic_text.textContent = text_post.value;
+        comment_text.textContent = text_post.value;
         comments_wrapper.querySelector(".comment_form").addEventListener("submit", addCommentsReplies);
         comments_wrapper.querySelector(".delete_wrapper").addEventListener("click", popupDelete);
         comments_wrapper.querySelector(".no_action").addEventListener("click", popupDelete);
         comments_wrapper.querySelector(".yes_action").addEventListener("click", deletePost);
         comments_wrapper.querySelector(".edit_action").addEventListener("click", editCommentsReplies);
         comments_wrapper.querySelector(".edit_container").addEventListener("submit", saveCommentsReplies);
-        add_post.classList.remove("input_error");
+        add_post.classList.remove("error");
         add_post.classList.remove("active");
         text_post.value = "";
         comments_thread.appendChild(comments_wrapper);
@@ -50,7 +50,7 @@ function addCommentsReplies(e){
     const add_comment = comment_form.querySelector(".add_comment");
 
     if((add_comment.value.length == 0)){
-        add_comment.closest("form").classList.add("input_error");
+        add_comment.closest("form").classList.add("error");
     }else{
         reply_wrapper.querySelector(".edit").addEventListener("click", editCommentsReplies);
         reply_wrapper.querySelector(".edit_reply").addEventListener("submit", saveReplies);
@@ -106,11 +106,11 @@ function deleteCommentsReplies(e){
  */
 function editCommentsReplies(e){
     const edit_action = e.target;
-    const topic_text = edit_action.closest(".comments_wrapper").querySelector(".topic_text");
+    const comment_text = edit_action.closest(".comments_wrapper").querySelector(".comment_text");
     const edit_field = edit_action.closest(".comments_wrapper").querySelector(".edit_field");
 
     edit_action.closest(".comments_wrapper").querySelector(".edit_post").classList.toggle("hidden");
-    edit_field.value = topic_text.textContent;
+    edit_field.value = comment_text.textContent;
 }
 
 /**
@@ -124,14 +124,14 @@ function saveCommentsReplies(e){
 
     const edit_container = e.target;
     const edit_field = edit_container.querySelector(".edit_field");
-    const topic_text = edit_container.closest(".comments_wrapper").querySelector(".topic_text");
+    const comment_text = edit_container.closest(".comments_wrapper").querySelector(".comment_text");
     const edit_post = edit_container.closest(".edit_post");
 
     if((edit_field.value.length == 0)){
-        edit_field.closest("form").classList.add("input_error");
+        edit_field.closest("form").classList.add("error");
     }else{
-        edit_field.closest("form").classList.remove("input_error");
-        topic_text.textContent = edit_field.value;
+        edit_field.closest("form").classList.remove("error");
+        comment_text.textContent = edit_field.value;
         edit_post.classList.add("hidden");
     }
 }
@@ -143,11 +143,11 @@ function saveCommentsReplies(e){
  * @author Kei
  */
 function editCommentsReplies(e){
-    const edit_response_btn = e.target;
-    const reply = edit_response_btn.closest(".reply_wrapper").querySelector(".reply");
-    const edit_field_reply = edit_response_btn.closest(".reply_wrapper").querySelector(".edit_field_reply");
+    const edit_reply_btn = e.target;
+    const reply = edit_reply_btn.closest(".reply_wrapper").querySelector(".reply");
+    const edit_field_reply = edit_reply_btn.closest(".reply_wrapper").querySelector(".edit_field_reply");
 
-    edit_response_btn.closest(".reply_wrapper").querySelector(".edit_comment").classList.toggle("hidden");
+    edit_reply_btn.closest(".reply_wrapper").querySelector(".edit_comment").classList.toggle("hidden");
     edit_field_reply.value = reply.textContent;
 }
 
@@ -166,9 +166,9 @@ function saveReplies(e){
     const edit_comment = edit_reply.closest(".edit_comment");
 
     if(edit_field_reply.value.length == 0){
-        edit_field_reply.closest("form").classList.add("input_error");
+        edit_field_reply.closest("form").classList.add("error");
     }else{
-        edit_field_reply.closest("form").classList.remove("input_error");
+        edit_field_reply.closest("form").classList.remove("error");
         reply.textContent = edit_field_reply.value;
         edit_comment.classList.add("hidden");
     }

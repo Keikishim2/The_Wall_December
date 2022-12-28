@@ -138,7 +138,7 @@ section .post form {
 section .post form.active {
   border: 1px solid #00a3ff;
 }
-section .post form.input_error {
+section .post form.error {
   border: 1px solid #eb5757;
 }
 section .post form textarea {
@@ -183,36 +183,36 @@ section #comments_thread .comments_wrapper {
   margin-bottom: 30px;
   padding: 24px 30px 25px;
 }
-section #comments_thread .comments_wrapper .topic_block .delete_container {
+section #comments_thread .comments_wrapper .comments_container .delete_container {
   display: flex;
   align-items: center;
 }
-section #comments_thread .comments_wrapper .topic_block .delete_container.active .delete_topic_btn {
+section #comments_thread .comments_wrapper .comments_container .delete_container.active .delete_topic_btn {
   pointer-events: none;
 }
-section #comments_thread .comments_wrapper .topic_block .delete_container.active .confirm_text {
+section #comments_thread .comments_wrapper .comments_container .delete_container.active .confirm_text {
   display: flex;
 }
-section #comments_thread .comments_wrapper .topic_block .delete_container .confirm_text {
+section #comments_thread .comments_wrapper .comments_container .delete_container .confirm_text {
   display: none;
 }
-section #comments_thread .comments_wrapper .topic_text {
+section #comments_thread .comments_wrapper .comment_text {
   color: #ffffff;
   font: 16px/25px "Roboto-Italic", sans-serif;
   margin-bottom: 5px;
   overflow: hidden;
   width: 100%;
 }
-section #comments_thread .comments_wrapper .topic_block .user,
+section #comments_thread .comments_wrapper .comments_container .user,
 section #comments_thread .comments_wrapper .reply_container .user {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-section #comments_thread .comments_wrapper .topic_block .user .topic_details,
-section #comments_thread .comments_wrapper .reply_container .user .topic_details,
-section #comments_thread .comments_wrapper .topic_block .user .name,
+section #comments_thread .comments_wrapper .comments_container .user .user,
+section #comments_thread .comments_wrapper .reply_container .user .user,
+section #comments_thread .comments_wrapper .comments_container .user .name,
 section #comments_thread .comments_wrapper .reply_container .user .name {
   align-items: center;
   color: #a3a3ff;
@@ -220,18 +220,18 @@ section #comments_thread .comments_wrapper .reply_container .user .name {
   font: 14px/16px "Roboto-Regular", sans-serif;
   justify-content: space-between;
 }
-section #comments_thread .comments_wrapper .topic_block:hover .edit_delete_action,
+section #comments_thread .comments_wrapper .comments_container:hover .edit_delete_action,
 section #comments_thread .comments_wrapper .reply_container:hover .edit_delete_action {
   transition: all 0.21s ease-in-out;
   opacity: 1;
   pointer-events: all;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action {
   display: flex;
   align-items: center;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .edit_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action {
   background-color: #2c2d34;
   border-radius: 4px;
@@ -242,7 +242,7 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   transition: all 0.21s ease-in-out;
   width: 29px;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action::after,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .edit_action::after,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action::after {
   background: url("../images/the_wall_sprite_icon.svg") no-repeat;
   background-position: 0 0;
@@ -251,16 +251,16 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   height: 12px;
   width: 12px;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action:hover,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .edit_action:hover,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action:hover {
   background-color: #ffffff;
   border: 1px solid #ffffff;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action:hover::after,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .edit_action:hover::after,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action:hover::after {
   background-position: 0 0;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper {
   align-items: center;
   background-color: #2c2d34;
@@ -268,7 +268,7 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   border: 1px solid #606066;
   display: flex;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .delete_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action {
   background-color: #2c2d34;
   border-radius: 4px;
@@ -279,7 +279,7 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   transition: all 0.21s ease-in-out;
   width: 28px;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action::after,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .delete_action::after,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action::after {
   background: url("../images//the_wall_sprite_icon.svg") no-repeat -21px 0;
   content: "";
@@ -287,16 +287,16 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   height: 12px;
   width: 12px;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action:hover,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .delete_action:hover,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action:hover {
   background-color: #ffffff;
   border: 1px solid #ffffff;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action:hover::after,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .delete_action:hover::after,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action:hover::after {
   background-position: -21px 0;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text {
   color: #ffffff;
   display: none;
@@ -304,7 +304,7 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   gap: 8px;
   margin: 0 8px;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .action {
   background-color: transparent;
   border: none;
@@ -312,33 +312,33 @@ section #comments_thread .comments_wrapper .reply_container .edit_delete_action 
   font: 10px/12px "Roboto-Medium", sans-serif;
   transition: all 0.21s ease-in-out;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .action:hover,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .action:hover,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .action:hover {
   opacity: 0.8;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .no_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .no_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .no_action,
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .no_action_btn,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .no_action_btn,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .no_action_btn {
   color: #6d7186;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .yes_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .yes_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .yes_action,
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .yes_action_btn,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper .confirm_text .yes_action_btn,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .yes_action_btn {
   color: #a3a3ff;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper.active .delete_action,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper.active .delete_action,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper.active .delete_action {
   border-radius: 0;
   border-right: 1px solid #606066;
   pointer-events: none;
 }
-section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper.active .confirm_text,
+section #comments_thread .comments_wrapper .comments_container .edit_delete_action .delete_wrapper.active .confirm_text,
 section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper.active .confirm_text {
   display: flex !important;
 }
-section #comments_thread .comments_wrapper .topic_block .reply,
+section #comments_thread .comments_wrapper .comments_container .reply,
 section #comments_thread .comments_wrapper .reply_container .reply {
   color: #ffffff;
   font: 16px/25px "Roboto-Italic", sans-serif;
@@ -381,12 +381,12 @@ section #comments_thread .comments_wrapper .edit_comment form textarea {
 .hidden {
   display: none !important;
 }
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   section {
     margin: 48px 35px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   #profile_name {
     display: none;
   }
@@ -394,5 +394,20 @@ section #comments_thread .comments_wrapper .edit_comment form textarea {
     color: transparent !important;
     padding: 14px 0 0 26px;
     width: 35px;
+  }
+}
+@media screen and (max-width: 424px) {
+  section textarea {
+    overflow: hidden;
+  }
+  section form {
+    flex-direction: column;
+  }
+  section form button {
+    margin-bottom: 37px;
+    width: 100%;
+  }
+  section #comments_thread .comments_container .user {
+    font: 12px/16px "Roboto-Regular", sans-serif;
   }
 }

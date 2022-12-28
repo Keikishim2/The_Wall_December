@@ -155,7 +155,7 @@ section{
             &.active{
                 border: 1px solid @link;
             }
-            &.input_error{
+            &.error{
                 border: 1px solid @error;
             }
             textarea{
@@ -206,7 +206,7 @@ section{
             border-radius: 10px;
             margin-bottom: 30px;
             padding: 24px 30px 25px;
-            .topic_block{
+            .comments_container{
                 .delete_container{
                     display: flex;
                     align-items: center;
@@ -223,21 +223,21 @@ section{
                     }
                 }
             }
-            .topic_text{
+            .comment_text{
                 color: @white;
                 font: 16px/25px "Roboto-Italic", sans-serif;
                 margin-bottom: 5px;
                 overflow: hidden;
                 width: 100%;
             }
-            .topic_block,
+            .comments_container,
             .reply_container{
                 .user{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     margin-bottom: 25px;
-                    .topic_details,
+                    .user,
                     .name{
                         align-items: center;
                         color: @name;
@@ -404,13 +404,13 @@ section{
 
 
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     section{
         margin: 48px 35px;
     }
 }
 
-@media only screen and (max-width: 768px){
+@media screen and (max-width: 768px){
     #profile_name{
         display: none;
     }
@@ -418,5 +418,26 @@ section{
         color: transparent !important;
         padding: 14px 0 0 26px;
         width: 35px;
+    }
+}
+@media screen and (max-width: 424px){
+    section{
+        textarea{
+            overflow: hidden;
+        }
+        form{
+            flex-direction: column;
+            button{
+                margin-bottom: 37px;
+                width: 100%;
+            }
+        }
+        #comments_thread{
+            .comments_container{
+                .user{
+                    font: 12px/16px "Roboto-Regular", sans-serif;
+                }
+            }
+        }
     }
 }

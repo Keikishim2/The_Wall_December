@@ -34,7 +34,7 @@ body {
   width: 100%;
 }
 #signup_login_page .login_wrapper::after {
-  background-image: url('../../assets/images/right_panel_sign_up_in.svg');
+  background-image: url("../../assets/images/right_panel_sign_up_in.svg");
   background-color: #3b3c43;
   background-position: -25px -48px;
   background-repeat: no-repeat;
@@ -49,7 +49,7 @@ body {
   width: 205px;
 }
 #signup_login_page .login_wrapper::before {
-  background: url('../../assets/images/the_wall_big_logo.svg');
+  background: url("../../assets/images/the_wall_big_logo.svg");
   background-repeat: no-repeat;
   content: '';
   display: block;
@@ -58,15 +58,15 @@ body {
   right: 17px;
   top: 75px;
   width: 138px;
-  z-index: 999;
+  z-index: 9999;
 }
 #signup_login_page .login_wrapper .welcome {
   display: inline-block;
   margin: 72px 69px auto;
-  text-align: left;
+  text-align: center;
 }
 #signup_login_page .login_wrapper .welcome::before {
-  background: url('../../assets/images/the_wall_icon.svg');
+  background-image: url("../../assets/images/the_wall_icon.svg");
   background-repeat: no-repeat;
   content: '';
   display: block;
@@ -79,13 +79,16 @@ body {
 }
 #signup_login_page .login_wrapper .welcome h2 {
   color: #ffffff;
-  font: 21px/24px 'Roboto-Regular', sans-serif;
-  margin: 0px 0px 4px 76px;
+  font: 21px/24px "Roboto-Regular", sans-serif;
+  margin: 0px 0px 4px -15px;
   position: relative;
+}
+#signup_login_page .login_wrapper .welcome h2.login {
+  margin: 0px 0px 4px 19px;
 }
 #signup_login_page .login_wrapper .welcome p {
   color: #6d7186;
-  font: 17px/21px 'Roboto-Regular', sans-serif;
+  font: 17px/21px "Roboto-Regular", sans-serif;
   margin: 0 0 0 76px;
 }
 #signup_login_page .login_wrapper form {
@@ -97,7 +100,7 @@ body {
 #signup_login_page .login_wrapper form label {
   color: #6d7186;
   display: block;
-  font: 14px/16px 'Roboto-Medium', sans-serif;
+  font: 14px/16px "Roboto-Medium", sans-serif;
   line-height: 21px;
   text-align: left;
   vertical-align: top;
@@ -131,12 +134,12 @@ body {
   border: none;
   color: #ffffff;
   cursor: pointer;
-  font: 21px/25px 'Roboto-Bold', sans-serif;
+  font: 21px/25px "Roboto-Bold", sans-serif;
   height: 60px;
   margin-top: 13px;
   max-width: 104%;
-  transition: 0.21s;
-  width: 553px;
+  transition: .21s;
+  width: 533px;
 }
 #signup_login_page .login_wrapper form #submit_btn:hover {
   opacity: 0.8;
@@ -144,7 +147,7 @@ body {
 #signup_login_page .login_wrapper form a {
   color: #6d7186;
   display: block;
-  font: 17px/21px 'Roboto-Regular', sans-serif;
+  font: 17px/21px "Roboto-Regular", sans-serif;
   margin: 33px auto;
   opacity: 0.9;
   text-align: center;
@@ -199,6 +202,6 @@ body {
     padding: 20px 38px 0 20px !important;
   }
   #signup_login_page .form #submit_btn {
-    width: 105%;
+    width: 100%;
   }
 }

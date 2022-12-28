@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="This is Main Wall where everyone can express themselves">
-    <meta name="author" content="Kei Kishimoto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Main Wall</title>
-    <link rel="shortcut icon" href="../../assets/images/wall.ico">
+    <title>The Main Wall</title>\
+    <link rel="shortcut icon" href="../../assets/images/wall.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/wall.css">
 </head>
 <body>
@@ -21,41 +19,73 @@
         <span></span>
     </nav>
     <section id="post_wall">
-        <h1>Hello Kei,</h1>
-        <p>Welcome to V88 Forum Dashboard</p>
-        <div class="main_wall">
-            <form action="#" class="add_post" method="POST">
-                <textarea class="post_it" placeholder="Care to Share?"></textarea>
-                <button type="submit" id="post_btn">Post</button>
+        <div class="welcome">
+            <h1>Hello Kei,
+                <span>Welcome to V88 Forum Dashboard</span>
+            </h1>
+        </div>
+        <div class="post_container post">
+            <form action="#" id="add_post">
+                <textarea id="text_post" placeholder="Care to share?"></textarea>
+                <button type="submit" class="post_btn">Post</button>
             </form>
-            <h3>Recent Forums</h3>
-            <div class="comment_thread">
-                <div class="comment_wrapper hidden">
-                    <p></p>
-                    <h5 class="name">Kei Kishimoto (few seconds ago) </h5>
-                    <button type="button" class="reply">Add Comment</button>
-                    <div class="actions">
-                        <button type="button" class="edit_comment"></button>
-                        <div class="delete_comment_container">
-                            <button type="button" class="delete_comment"></button>
-                            <p class="popup">Confirm Delete? <button type="button" class="action_button no_action">No</button><button type="button" class="action_button yes_action">Yes</button></p>
-                        </div>
-                    </div>
-                    <div class="reply_content hidden">
-                        <p class="replies"></p>
-                        <button type="button" class="reply">Add Reply</button>
-                        <div class="actions">
-                            <button type="button" class="edit_comment"></button>
-                            <div class="delete_comment_container">
-                                <button type="button" class="delete_comment"></button>
-                                <p class="popup">Confirm Delete? <button type="button" class="action_button no_action">No</button><button type="button" class="action_button yes_action">Yes</button></p>
+        </div>
+        <p class="recent">Recent Forums</p>
+        <div id="comments_thread">
+            <div class="comments_wrapper hidden">
+                <div class="topic_block">
+                    <p class="topic_text"></p>
+                    <div class="user">
+                        <div class="topic_details">Kei Kishimoto (few seconds ago) | 0 Responses</div>
+                        <div class="edit_delete_action">
+                            <button type="button" class="edit_action"></button>
+                            <div class="delete_wrapper">
+                                <button class="delete_action"></button>
+                                <p class="confirm_text">Confirm Delete?
+                                    <button type="button" class="action no_action">No</button>
+                                    <button type="button" class="action yes_action">Yes</button>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="comments_replies hidden">
-                    <textarea class="reply_comment" placeholder="Say Something..."></textarea>
-                    <button type="button" class="add_reply">Comment</button>
+                <div class="edit_post post hidden">
+                    <form action="#" class="edit_container">
+                        <textarea class="edit_field"></textarea>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+                <div class="comment_container post">
+                    <form action="#" class="comment_form" method="POST">
+                        <textarea class="add_comment" placeholder="Say Something..."></textarea>
+                        <button type="submit">Comment</button>
+                    </form>
+                </div>
+                <div class="comments_and_replies">
+                    <div class="reply_wrapper hidden">
+                        <div class="reply_container">
+                            <p class="reply"></p>
+                            <div class="user">
+                                <p class="name">Kei Kishimoto (few seconds ago)</p>
+                                <div class="edit_delete_action">
+                                    <button type="button" class="edit edit_action"></button>
+                                    <div class="delete_wrapper">
+                                        <button type="button" class="delete delete_action"></button>
+                                        <p class="confirm_text">Confirm Delete?
+                                            <button type="button" class="action no_action_btn">No</button>
+                                            <button type="button" class="action yes_action_btn">Yes</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit_comment post hidden">
+                            <form action="#" class="edit_reply post" method="POST">
+                                <textarea class="edit_field_reply" placeholder="Say Something"></textarea>
+                                <button type="submit" class="save_response_btn">Save</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

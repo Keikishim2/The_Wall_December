@@ -28,7 +28,7 @@ body{
     border: 1px solid @error !important;
 }
 .success{
-    border: 1px solid @link !important;
+    border: 1px solid @link !important
 }
 #signup_login_page{
     position: relative;
@@ -43,7 +43,7 @@ body{
         vertical-align: top;
         width: 100%;
         &::after{
-            background-image: url('../../assets/images/right_panel_sign_up_in.svg');
+            background-image: url("../../assets/images/right_panel_sign_up_in.svg");
             background-color: @dark;
             background-position: -25px -48px;
             background-repeat: no-repeat;
@@ -58,7 +58,7 @@ body{
             width: 205px;
         }
         &::before{
-            background: url('../../assets/images/the_wall_big_logo.svg');
+            background: url("../../assets/images/the_wall_big_logo.svg");
             background-repeat: no-repeat;
             content: '';
             display: block;
@@ -67,14 +67,14 @@ body{
             right: 17px;
             top: 75px;
             width: 138px;
-            z-index: 999;
+            z-index: 9999;
         }
         .welcome{
             display: inline-block;
             margin: 72px 69px auto;
-            text-align: left;
+            text-align: center;
             &::before{
-                background: url('../../assets/images/the_wall_icon.svg');
+                background-image: url("../../assets/images/the_wall_icon.svg");
                 background-repeat: no-repeat;
                 content: '';
                 display: block;
@@ -87,13 +87,16 @@ body{
             }
             h2{
                 color: @white;
-                font: 21px/24px 'Roboto-Regular', sans-serif;
-                margin: 0px 0px 4px 76px;
+                font: 21px/24px "Roboto-Regular", sans-serif;
+                margin: 0px 0px 4px -15px;
                 position: relative;
+                &.login{
+                    margin: 0px 0px 4px 19px;
+                }
             }
             p{
                 color: @gray;
-                font: 17px/21px 'Roboto-Regular', sans-serif;
+                font: 17px/21px "Roboto-Regular", sans-serif;
                 margin: 0 0 0 76px;
             }
         }
@@ -105,7 +108,7 @@ body{
             label{
                 color: @gray;
                 display: block;
-                font: 14px/16px 'Roboto-Medium', sans-serif;
+                font: 14px/16px "Roboto-Medium", sans-serif;
                 line-height: 21px;
                 text-align: left;
                 vertical-align: top;
@@ -139,12 +142,12 @@ body{
                 border: none;
                 color: @white;
                 cursor: pointer;
-                font: 21px/25px 'Roboto-Bold', sans-serif;
+                font: 21px/25px "Roboto-Bold", sans-serif;
                 height: 60px;
                 margin-top: 13px;
                 max-width: 104%;
-                transition: 0.21s;
-                width: 553px;
+                transition: .21s;
+                width: 533px;
                 &:hover{
                     opacity: 0.8;
                 }
@@ -152,7 +155,7 @@ body{
             a{
                 color: @gray;
                 display: block;
-                font: 17px/21px 'Roboto-Regular', sans-serif;
+                font: 17px/21px "Roboto-Regular", sans-serif;
                 margin: 33px auto;
                 opacity: 0.9;
                 text-align: center;
@@ -209,7 +212,7 @@ body{
         .form{
             padding: 20px 38px 0 20px !important;
             #submit_btn{
-                width: 105%;
+                width: 100%;
             }
         }
     }

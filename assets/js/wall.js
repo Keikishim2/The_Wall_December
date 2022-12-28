@@ -1,139 +1,175 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const add_post = document.getElementById("post_btn");
-    const fetch_all_thread = document.querySelector(".comment_thread");
-    const post_wall = document.querySelector("#post_wall");
-
-    add_post.addEventListener("click", (e) => {
-        displayPost(e);
-    });
-
-    fetch_all_thread.addEventListener("click", (e) => {
-        allCommentsReplies(e);
-    });
-
-    post_wall.addEventListener("click", (e) => {
-        triggerDeleteAction(e);
-    });
+    const add_post = document.getElementById("add_post");
+    add_post.addEventListener("submit", addPost);            /* This will submit Post Form */
 });
 
-/**
- * DOCU: This function adds post to the wall if the field is not empty
- * Last Updated: Nov 21, 2022
- * @param event - The event object is a property of the Window object.
- * @author Kei Kishimoto
- */
-function displayPost(event){
-    event.preventDefault();
-    const comment_container = document.querySelector(".comment_thread");
-    const comment_wrapper = document.querySelector(".comment_wrapper.hidden").cloneNode(true);
-    const add_post = document.querySelector(".post_it");
-    const forms = document.querySelector(".add_post");
 
-    if(add_post.value.trim() === ''){
-        forms.className = "add_post error";
+/**
+ * DOCU: This function populates the new post on the wall
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
+ */
+function addPost(e){
+    e.preventDefault();
+    const text_post = document.querySelector("#text_post");
+    const comments_thread = document.getElementById("comments_thread");
+    const comments_wrapper = document.querySelector(".comments_wrapper.hidden").cloneNode(true);
+    const topic_text = comments_wrapper.querySelector(".topic_text");
+
+    if(text_post.value.length == 0){
+        add_post.classList.add("input_error");
+        add_post.classList.remove("active");
     }else{
-        forms.classList.remove("error");
-        comment_wrapper.setAttribute("class", "comment_wrapper");
-        comment_wrapper.querySelector("p").innerHTML = add_post.value;
-        add_post.value = "";
-        comment_container.appendChild(comment_wrapper);
+        comments_wrapper.setAttribute("class", "comments_wrapper");
+        topic_text.textContent = text_post.value;
+        comments_wrapper.querySelector(".comment_form").addEventListener("submit", addCommentsReplies);
+        comments_wrapper.querySelector(".delete_wrapper").addEventListener("click", popupDelete);
+        comments_wrapper.querySelector(".no_action").addEventListener("click", popupDelete);
+        comments_wrapper.querySelector(".yes_action").addEventListener("click", deletePost);
+        comments_wrapper.querySelector(".edit_action").addEventListener("click", editCommentsReplies);
+        comments_wrapper.querySelector(".edit_container").addEventListener("submit", saveCommentsReplies);
+        add_post.classList.remove("input_error");
+        add_post.classList.remove("active");
+        text_post.value = "";
+        comments_thread.appendChild(comments_wrapper);
     }
 }
 
 /**
- * DOCU: This function adds comments to the wall if the field is not empty
- * Last Updated: Nov 21, 2022
- * @param event - The event object is a property of the Window object.
- * @author Kei Kishimoto
+ * DOCU: This function enables the user to add comments and replies to the post as well edit and delete
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
  */
-function addComments(event){
-    event.preventDefault();
-    const post_container = event.target.closest(".comment_wrapper");
-    const reply_content = document.querySelector(".reply_content.hidden").cloneNode(true);
-    const reply_comment = document.querySelector(".add_comment_area").value;
+function addCommentsReplies(e){
+    e.preventDefault();
+    const comment_form = e.target;
+    const comments_and_replies = comment_form.closest(".comments_wrapper").querySelector(".comments_and_replies");
+    const reply_wrapper = comment_form.closest(".comments_wrapper").querySelector(".reply_wrapper.hidden").cloneNode(true);
+    const add_comment = comment_form.querySelector(".add_comment");
 
-    if(document.querySelector(".add_comment_area").value === ""){
-        reply_comment.className = "add_comment_area error";
+    if((add_comment.value.length == 0)){
+        add_comment.closest("form").classList.add("input_error");
     }else{
-        reply_content.setAttribute("class", "reply_content");
-        reply_content.querySelector(".replies").innerHTML = reply_comment;
-        post_container.appendChild(reply_content);
-        event.target.parentElement.remove();
-    }
-}
-/**
- * DOCU: This function adds replies to the comments pertaining to the wall post if the field is not empty
- * Last Updated: Nov 21, 2022
- * @param event - The event object is a property of the Window object.
- * @author Kei Kishimoto
- */
-function allCommentsReplies(event){
-    if(match(event.target, "reply")){
-        const parent = event.target.parentElement;
-        const comments_replies = document.querySelector(".comments_replies").cloneNode(true);
-        comments_replies.setAttribute("class", "comments_replies");
-        comments_replies.querySelector(".reply_comment").setAttribute("class", "add_comment_area");
-        parent.appendChild(comments_replies);
-        
-    }else if(match(event.target, "add_reply")){
-        addComments(event);
+        reply_wrapper.querySelector(".edit").addEventListener("click", editCommentsReplies);
+        reply_wrapper.querySelector(".edit_reply").addEventListener("submit", saveReplies);
+        reply_wrapper.querySelector(".delete").addEventListener("click", popupDelete);
+        reply_wrapper.querySelector(".no_action_btn").addEventListener("click", popupDelete);
+        reply_wrapper.querySelector(".yes_action_btn").addEventListener("click", deleteCommentsReplies);
+
+        reply_wrapper.setAttribute("class", "reply_wrapper");
+        reply_wrapper.querySelector(".reply").innerHTML = add_comment.value;
+        add_comment.value = "";
+
+        comments_and_replies.appendChild(reply_wrapper);
     }
 }
 
 /**
- * DOCU: When the delete button is clicked, add the class 'active' to the parent element of the delete button.
- * Last Updated: December 27, 2022
+ * DOCU: This function shows the popup for delete confirmation
+ * Last Updated: December 28, 2022
+ * @param e - the event object
  * @author Kei
  */
-function deleteButton(){
-    const delete_button = document.querySelectorAll(".delete_comment");
-
-    for(let remove of delete_button){
-        remove.addEventListener("click", () => {
-            remove.closest(".delete_comment_container").classList.add("active");
-        });
-    }
+function popupDelete(e){
+    const delete_action = e.target;
+    delete_action.closest(".delete_wrapper").classList.toggle("active");
 }
 
 /**
- * DOCU: When the delete button is clicked, the delete button is removed and the delete action is triggered.
- * Triggered By: post_wall.addEventListener("click", (e) => {triggerDeleteAction(e);
- * Last Updated: December 27, 2022
+ * DOCU: This function deletes the entire post for the
+ * Last Updated: December 28, 2022
+ * @param e - the event object
  * @author Kei
  */
-function triggerDeleteAction(){
-    deleteButton();
-    actionsDelete();
+function deletePost(e){
+    const yes_action = e.target;
+    yes_action.closest(".comments_wrapper").remove();
 }
 
 /**
- * DOCU: This function removes the comment_wrapper div when the yes_action button is clicked.
- * Last Updated: December 27, 2022
+ * DOCU: This function deletes the replies on the wall
+ * Last Updated: December 28, 2022
+ * @param e - the event object
  * @author Kei
  */
-function actionsDelete(){
-    const no_action = document.querySelectorAll(".no_action");
-    const yes_action = document.querySelectorAll(".yes_action");
+function deleteCommentsReplies(e){
+    e.target.closest(".reply_wrapper").remove();
+}
 
-    for(let no of no_action){
-        no.addEventListener("click", () =>{
-            no.closest(".delete_comment_container").classList.remove("active");
-        });
-    }
-    for(let yes of yes_action){
-        yes.addEventListener("click", () =>{
-            yes.closest(".comment_wrapper").remove();
-        });
+/**
+ * DOCU: This function edits the posts and replies on the wall
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
+ */
+function editCommentsReplies(e){
+    const edit_action = e.target;
+    const topic_text = edit_action.closest(".comments_wrapper").querySelector(".topic_text");
+    const edit_field = edit_action.closest(".comments_wrapper").querySelector(".edit_field");
+
+    edit_action.closest(".comments_wrapper").querySelector(".edit_post").classList.toggle("hidden");
+    edit_field.value = topic_text.textContent;
+}
+
+/**
+ * DOCU: This function saves and updates the new post
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
+ */
+function saveCommentsReplies(e){
+    e.preventDefault();
+
+    const edit_container = e.target;
+    const edit_field = edit_container.querySelector(".edit_field");
+    const topic_text = edit_container.closest(".comments_wrapper").querySelector(".topic_text");
+    const edit_post = edit_container.closest(".edit_post");
+
+    if((edit_field.value.length == 0)){
+        edit_field.closest("form").classList.add("input_error");
+    }else{
+        edit_field.closest("form").classList.remove("input_error");
+        topic_text.textContent = edit_field.value;
+        edit_post.classList.add("hidden");
     }
 }
 
 /**
- * DOCU: This function finds the class name and returns it true, otherwise returns false.
- * Last Updated: Nov 21, 2022
- * @param el - element to check
- * @param class_name - the class name to match
- * @author Kei Kishimoto
+ * DOCU: This function enables the user to edit the reply
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
  */
-function match(el, class_name){
-    return el.classList.contains(class_name);
+function editCommentsReplies(e){
+    const edit_response_btn = e.target;
+    const reply = edit_response_btn.closest(".reply_wrapper").querySelector(".reply");
+    const edit_field_reply = edit_response_btn.closest(".reply_wrapper").querySelector(".edit_field_reply");
+
+    edit_response_btn.closest(".reply_wrapper").querySelector(".edit_comment").classList.toggle("hidden");
+    edit_field_reply.value = reply.textContent;
+}
+
+/**
+ * DOCU: This function enables the user to save and update the reply
+ * Last Updated: December 28, 2022
+ * @param e - the event object
+ * @author Kei
+ */
+function saveReplies(e){
+    e.preventDefault();
+
+    const edit_reply = e.target;
+    const edit_field_reply= edit_reply.querySelector(".edit_field_reply");
+    const reply = edit_reply.closest(".reply_wrapper").querySelector(".reply");
+    const edit_comment = edit_reply.closest(".edit_comment");
+
+    if(edit_field_reply.value.length == 0){
+        edit_field_reply.closest("form").classList.add("input_error");
+    }else{
+        edit_field_reply.closest("form").classList.remove("input_error");
+        reply.textContent = edit_field_reply.value;
+        edit_comment.classList.add("hidden");
+    }
 }

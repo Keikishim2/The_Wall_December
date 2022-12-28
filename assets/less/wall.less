@@ -9,6 +9,7 @@
 @nav: #3A3C46;
 @border: #606066;
 @darker: #32333C;
+@hover: #0050C8;
 
 
 @font-face {
@@ -32,8 +33,8 @@
 }
 
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 body{
     background-color: @bg;
@@ -45,18 +46,18 @@ nav{
     display: flex;
     height: 62px;
     justify-content: space-between;
-    margin: 0 auto 42px;
+    margin: -18px auto 42px;
     width: 100%;
     >span{
         display: none;
     }
     h1{
-        font: 21px/25px 'Roboto-Regular', sans-serif;
+        font: 21px/25px "Roboto-Regular", sans-serif;
         opacity: 0.9;
         position: relative;
         margin: 0 0 0 60px;
         &::before{
-            background-image: url('../images/the_wall_small_logo.svg');
+            background-image: url("../images/the_wall_small_logo.svg");
             background-repeat: no-repeat;
             content: '';
             display: block;
@@ -73,14 +74,14 @@ nav{
         margin: 0 25px 0 0;
         p, a{
             color: @white;
-            font: 14px/16px 'Roboto-Regular', sans-serif;
+            font: 14px/16px "Roboto-Regular", sans-serif;
             text-decoration: none;
         }
         a{
             position: relative;
             margin: 0 0 0 16px;
             &::before{
-                background-image: url('../images/the_wall_sprite_icon.svg');
+                background-image: url("../images/the_wall_sprite_icon.svg");
                 background-position: -77px 1px;
                 background-repeat: no-repeat;
                 content: '';
@@ -104,7 +105,7 @@ nav{
             display: none;
         }
         >span{
-            background-image: url('../images/the_wall_sprite_icon.svg');
+            background-image: url("../images/the_wall_sprite_icon.svg");
             background-position: -77px 1px;
             background-repeat: no-repeat;
             content: '';
@@ -117,294 +118,305 @@ nav{
         }
     }
 }
-.hidden{
-    display: none;
-}
 
 section{
-    margin: 0 auto;
+    margin: 48px auto 0;
     max-width: 978px;
-    padding: 0 20px;
-    h1{
-        color: @white;
-        font: 21px/25px 'Roboto-Regular', sans-serif;
-    }
-    p{
-        color: @gray;
-        font: 17px/20px 'Roboto-Regular', sans-serif;
-    }
-    .main_wall{
-        h3{
-            color: @white;
-            font: 16px/18px 'Roboto-Regular', sans-serif;
-            margin: 57px auto;
-        }
-        .add_post{
-            align-items: center;
-            background: @nav;
-            border-radius: 20px;
-            display: flex;
-            height: 48px;
-            margin: 55px auto;
-            max-width: 978px;
-            overflow: hidden;
-            padding: 16px;
-            &:focus{
-                border: 1px solid @link !important;
+    .welcome{
+        margin-bottom: 56px;
+        h1{
+            color: white;
+            font: 21px/25px "Roboto-Regular", sans-serif;
+            span{
+                color: @gray;
+                display: block;
+                font: 18px/21px "Roboto-Regular", sans-serif;
+                margin-top: 7px;
             }
-            &.error{
-                border: 1px solid @error !important;
+        }
+    }
+    .post_container{
+        #add_post{
+            margin-bottom: 57px;
+        }
+    }
+    .post{
+        background-color: @nav;
+        border-radius: 10px;
+        form{
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            padding: 0 20px;
+            &.active{
+                border: 1px solid @link;
+            }
+            &.input_error{
+                border: 1px solid @error;
             }
             textarea{
-                -moz-appearance: none;
-                background: transparent;
-                border: 0;
+                background-color: @nav;
+                border: 1px solid transparent;
                 color: @white;
-                font: 17px/25px 'Roboto-Regular', sans-serif;
+                font: 18px/25px "Roboto-Regular", sans-serif;
+                height: 38px;
+                margin: 28px 0 11px;
+                max-height: 500px;
+                min-height: 38px;
                 outline: none;
-                padding-top: 20px;
+                padding-right: 20px;
+                position: relative;
                 resize: none;
                 width: 100%;
-                &::placeholder{
-                    font: 17px/25px 'Roboto-Regular', sans-serif;
-                }
             }
-            #post_btn{
+            button{
                 background-color: @link;
-                border-radius: 8.86px;
+                border-radius: 9px;
+                border: none;
                 color: @white;
                 cursor: pointer;
-                display: block;
-                height: 38px;
-                margin: 0 0 0 auto;
-                opacity: 0.9;
-                transition: 0.21s;
-                width: 100px;
-                border: none;
+                font: 14px/40px "Roboto-Regular", sans-serif;
+                min-width: 100px;
+                transition: all 0.21s ease-in-out;
                 &:hover{
-                    opacity: 0.8;
+                    background-color: @hover;
                 }
             }
         }
-        .comment_thread{
-            display: grid;
-            .comment_wrapper{
-                background-color: @comment;
-                border-radius: 10px;
-                display: block;
-                height: auto;
-                margin: 0 0 31px;
-                padding: 30px 30px;
-                position: relative;
-                &.hidden{
-                    display: none;
-                }
-                .name{
-                    color: @name;
-                    font: 13px/15px 'Roboto-Regular', sans-serif;
-                }
-                p{
-                    background: transparent;
-                    color: @white;
-                    font-style: italic;
-                    font: 16px/25px 'Roboto-Italic', sans-serif;
-                    margin: 0px auto 15px;
-                }
-                .reply_content{
-                    border-radius: 10px;
-                    padding: 0 0px 24px 30px;
-                    .replies{
-                        margin: 35px 0 0;
-                    }
-                }
-                .comments_replies{
-                    margin-bottom: 16px;
-                    padding-left: 30px;
-                    .add_comment_area{
-                        background: @nav;
-                        border-radius: 10px;
-                        font: 16px/25px 'Roboto-Italic', sans-serif;
-                        height: 80px;
-                        margin: 30px auto;
-                        max-width: 978px;
-                        padding-left: 15px;
-                        position: relative;
-                        resize: none;
-                        width: 100%;
-                        &:focus{
-                            border: 1px solid @link;
+    }
+    .edit_post{
+        &.post{
+            form{
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .recent{
+        color: @white;
+        font: 16px/19px "Roboto-Regular", sans-serif;
+        margin-bottom: 17px;
+    }
+    #comments_thread{
+        .comments_wrapper{
+            background-color: @darker;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 24px 30px 25px;
+            .topic_block{
+                .delete_container{
+                    display: flex;
+                    align-items: center;
+                    &.active{
+                        .delete_topic_btn{
+                            pointer-events: none;
+                        }
+                        .confirm_text{
+                            display: flex;
                         }
                     }
-                    .add_reply{
-                        height: 38px;
-                        margin: 0 0 0;
-                        position: absolute;
-                        right: 43px;
-                        transform: translateY(-97px);
-                        width: 100px;
+                    .confirm_text{
+                        display: none;
                     }
                 }
-                .actions{
-                    transform: translate(-61px, 10px);
-                    z-index: 999;
-                    .delete_comment_container{
-                        .delete_comment{
-                            align-items: center;
-                            background-color:@darker;
-                            display: inline-flex;
-                            float: right;
-                            transform: translate(-85px, -37px);
+            }
+            .topic_text{
+                color: @white;
+                font: 16px/25px "Roboto-Italic", sans-serif;
+                margin-bottom: 5px;
+                overflow: hidden;
+                width: 100%;
+            }
+            .topic_block,
+            .reply_container{
+                .user{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 25px;
+                    .topic_details,
+                    .name{
+                        align-items: center;
+                        color: @name;
+                        display: flex;
+                        font: 14px/16px "Roboto-Regular", sans-serif;
+                        justify-content: space-between;
+                    }
+                }
+                &:hover{
+                    .edit_delete_action{
+                        transition: all 0.21s ease-in-out;
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+                .edit_delete_action{
+                    display: flex;
+                    align-items: center;
+                    .edit_action{
+                        background-color: @bg;
+                        border-radius: 4px;
+                        border: 1px solid @border;
+                        cursor: pointer;
+                        height: 29px;
+                        margin-right: 6px;
+                        transition: all 0.21s ease-in-out;
+                        width: 29px;
+                        &::after{
+                            background: url("../images/the_wall_sprite_icon.svg") no-repeat;
+                            background-position: 0 0;
+                            content: "";
+                            display: inline-block;
+                            height: 12px;
+                            width: 12px;
+                        }
+                        &:hover{
+                            background-color: @white;
+                            border: 1px solid @white;
                             &::after{
-                                background-image: url('../images/the_wall_sprite_icon.svg');
-                                background-position: -16px 10px;
-                                background-repeat: no-repeat;
-                                content: '';
-                                height: 37px;
-                                transform: translateY(3px);
-                                width: 22px;
+                                background-position: 0 0;
+                            }
+                        }
+                    }
+                    .delete_wrapper{
+                        align-items: center;
+                        background-color: @bg;
+                        border-radius: 4px;
+                        border: 1px solid @border;
+                        display: flex;
+                        .delete_action{
+                            background-color: @bg;
+                            border-radius: 4px;
+                            border: none;
+                            cursor: pointer;
+                            height: 27px;
+                            outline: none;
+                            transition: all 0.21s ease-in-out;
+                            width: 28px;
+                            &::after{
+                                background: url("../images//the_wall_sprite_icon.svg") no-repeat -21px 0;
+                                content: "";
+                                display: inline-block;
+                                height: 12px;
+                                width: 12px;
                             }
                             &:hover{
-                                filter: invert(1);
+                                background-color: @white;
+                                border: 1px solid @white;
+                                &::after{
+                                    background-position: -21px 0;
+                                }
                             }
                         }
-                        .popup{
-                            align-items: center;
-                            background: @darker;
-                            border-radius: 4px;
-                            border-right: 0;
-                            border: 1px solid @border;
+                        .confirm_text{
                             color: @white;
                             display: none;
-                            font: 10px/12px 'Roboto-Medium', sans-serif;
-                            height: 37px;
+                            font: 10px/12px "Roboto-Medium", sans-serif;
+                            gap: 8px;
                             margin: 0 8px;
-                            padding-left: 6px;
-                            position: absolute;
-                            right: 0px;
-                            transform: translate(71px, -37px);
-                            .action_button{
+                            .action{
                                 background-color: transparent;
                                 border: none;
                                 cursor: pointer;
-                                font: 10px/12px 'Roboto-Medium', sans-serif;
+                                font: 10px/12px "Roboto-Medium", sans-serif;
                                 transition: all 0.21s ease-in-out;
                                 &:hover{
                                     opacity: 0.8;
                                 }
                             }
-                            button{
-                                background: transparent;
-                                color: @white;
-                                border: none;
+                            .no_action, .no_action_btn{
+                                color: @gray;
+                            }
+                            .yes_action, .yes_action_btn{
+                                color: @name;
                             }
                         }
                         &.active{
-                            .delete_comment{
-                                border-radius: 4px;
-                                border-top-right-radius: 0;
-                                border-bottom-right-radius: 0;
+                            .delete_action{
+                                border-radius: 0;
+                                border-right: 1px solid @border;
                                 pointer-events: none;
                             }
-                            .popup{
+                            .confirm_text{
                                 display: flex !important;
                             }
-                            .yes_action{
-                                color: @name;
+                        }
+                    }
+                }
+                .reply{
+                    color: @white;
+                    font: 16px/25px "Roboto-Italic", sans-serif;
+                    margin-bottom: 5px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                }
+            }
+            .reply_wrapper{
+                .reply_container{
+                    margin-top: 30px;
+                    .delete_container{
+                        display: flex;
+                        align-items: center;
+                        &.active{
+                            .delete_response_btn{
+                                pointer-events: none;
                             }
-                            .no_action{
-                                color: @gray;
+                            .confirm_text{
+                                display: flex;
                             }
                         }
+                        .confirm_text{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .edit_comment{
+                form{
+                    textarea{
+                        background-color: @nav;
+                        border: 1px solid transparent;
+                        color: @white;
+                        font: 18px/25px "Roboto-Regular", sans-serif;
+                        height: 38px;
+                        margin: 28px 0 11px;
+                        max-height: 500px;
+                        min-height: 38px;
+                        outline: none;
+                        padding-right: 20px;
+                        position: relative;
+                        resize: none;
+                        width: 100%;
                     }
                 }
             }
         }
     }
-    button{
-        background-color: @link;
-        border-radius: 8.86px;
-        border: 1px solid @border;
-        color: @white;
-        cursor: pointer;
-        line-height: 32px;
-        margin-right: 8px;
-        opacity: 0.9;
-        padding: 0 8px;
-        transition: 0.21s;
-        &:hover{
-            opacity: 0.8;
-        }
-        &.edit_comment{
-            align-items: center;
-            background-color: @darker;
-            display: inline-flex;
-            margin: -37px auto;
-            position: absolute;
-            right: 138px;
-            bottom: 35px;
-            &::after{
-                background-image: url('../images/the_wall_sprite_icon.svg');
-                background-repeat: no-repeat;
-                content: '';
-                background-position: 6px 10px;
-                height: 37px;
-                transform: translateY(3px);
-                width: 22px;
-            }
-            &:hover{
-                filter: invert(1);
-            }
-        }
-        &.reply{
-            font: 12px/25px 'Roboto-Regular', sans-serif;
-            line-height: 24px;
-            transform: translateY(15px);
-            width: 115px;
-        }
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    section{
+        margin: 48px 35px;
     }
-    @media screen and (max-width: 535px){
-        .main_wall{
-            overflow-x: hidden;
-            .comment_thread{
-                .comment_wrapper{
-                    .actions{
-                        transform: translate(50px, 10px);
-                        .delete_comment_container{
-                            .popup{
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+}
+
+@media only screen and (max-width: 768px){
+    #profile_name{
+        display: none;
     }
-    @media screen and (max-width: 400px){
-        .main_wall{
-            .add_post{
-                padding: 10px;
-            }
-            .comment_thread{
-                .comment_wrapper{
-                    padding: 30px 15px;
-                    .name{
-                        font: 11px/15px 'Roboto-Regular', sans-serif;
-                    }
-                    .reply_content{
-                        .replies{
-                            margin: 25px 0 0;
-                        }
-                    }
-                    .comments_replies{
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        .add_comment_area{
-                            font: 12px/15px 'Roboto-Italic', sans-serif;
-                            padding-left: 10px;
-                        }
-                    }
-                }
-            }
-        }
+    #log_out_btn{
+        color: transparent !important;
+        padding: 14px 0 0 26px;
+        width: 35px;
     }
 }

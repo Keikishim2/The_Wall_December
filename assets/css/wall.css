@@ -15,8 +15,8 @@
   src: url('../../assets/fonts/Roboto-italic.ttf');
 }
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 body {
   background-color: #2c2d34;
@@ -28,20 +28,20 @@ nav {
   display: flex;
   height: 62px;
   justify-content: space-between;
-  margin: 0 auto 42px;
+  margin: -18px auto 42px;
   width: 100%;
 }
 nav > span {
   display: none;
 }
 nav h1 {
-  font: 21px/25px 'Roboto-Regular', sans-serif;
+  font: 21px/25px "Roboto-Regular", sans-serif;
   opacity: 0.9;
   position: relative;
   margin: 0 0 0 60px;
 }
 nav h1::before {
-  background-image: url('../images/the_wall_small_logo.svg');
+  background-image: url("../images/the_wall_small_logo.svg");
   background-repeat: no-repeat;
   content: '';
   display: block;
@@ -59,7 +59,7 @@ nav .logout {
 nav .logout p,
 nav .logout a {
   color: #ffffff;
-  font: 14px/16px 'Roboto-Regular', sans-serif;
+  font: 14px/16px "Roboto-Regular", sans-serif;
   text-decoration: none;
 }
 nav .logout a {
@@ -67,7 +67,7 @@ nav .logout a {
   margin: 0 0 0 16px;
 }
 nav .logout a::before {
-  background-image: url('../images/the_wall_sprite_icon.svg');
+  background-image: url("../images/the_wall_sprite_icon.svg");
   background-position: -77px 1px;
   background-repeat: no-repeat;
   content: '';
@@ -89,7 +89,7 @@ nav .logout span {
     display: none;
   }
   nav > span {
-    background-image: url('../images/the_wall_sprite_icon.svg');
+    background-image: url("../images/the_wall_sprite_icon.svg");
     background-position: -77px 1px;
     background-repeat: no-repeat;
     content: '';
@@ -101,275 +101,298 @@ nav .logout span {
     width: 40px;
   }
 }
-.hidden {
-  display: none;
-}
 section {
-  margin: 0 auto;
+  margin: 48px auto 0;
   max-width: 978px;
+}
+section .welcome {
+  margin-bottom: 56px;
+}
+section .welcome h1 {
+  color: white;
+  font: 21px/25px "Roboto-Regular", sans-serif;
+}
+section .welcome h1 span {
+  color: #6d7186;
+  display: block;
+  font: 18px/21px "Roboto-Regular", sans-serif;
+  margin-top: 7px;
+}
+section .post_container #add_post {
+  margin-bottom: 57px;
+}
+section .post {
+  background-color: #3a3c46;
+  border-radius: 10px;
+}
+section .post form {
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 60px;
   padding: 0 20px;
 }
-section h1 {
-  color: #ffffff;
-  font: 21px/25px 'Roboto-Regular', sans-serif;
-}
-section p {
-  color: #6d7186;
-  font: 17px/20px 'Roboto-Regular', sans-serif;
-}
-section .main_wall h3 {
-  color: #ffffff;
-  font: 16px/18px 'Roboto-Regular', sans-serif;
-  margin: 57px auto;
-}
-section .main_wall .add_post {
-  align-items: center;
-  background: #3a3c46;
-  border-radius: 20px;
-  display: flex;
-  height: 48px;
-  margin: 55px auto;
-  max-width: 978px;
-  overflow: hidden;
-  padding: 16px;
-}
-section .main_wall .add_post:focus {
-  border: 1px solid #00a3ff !important;
-}
-section .main_wall .add_post.error {
-  border: 1px solid #eb5757 !important;
-}
-section .main_wall .add_post textarea {
-  -moz-appearance: none;
-  background: transparent;
-  border: 0;
-  color: #ffffff;
-  font: 17px/25px 'Roboto-Regular', sans-serif;
-  outline: none;
-  padding-top: 20px;
-  resize: none;
-  width: 100%;
-}
-section .main_wall .add_post textarea::placeholder {
-  font: 17px/25px 'Roboto-Regular', sans-serif;
-}
-section .main_wall .add_post #post_btn {
-  background-color: #00a3ff;
-  border-radius: 8.86px;
-  color: #ffffff;
-  cursor: pointer;
-  display: block;
-  height: 38px;
-  margin: 0 0 0 auto;
-  opacity: 0.9;
-  transition: 0.21s;
-  width: 100px;
-  border: none;
-}
-section .main_wall .add_post #post_btn:hover {
-  opacity: 0.8;
-}
-section .main_wall .comment_thread {
-  display: grid;
-}
-section .main_wall .comment_thread .comment_wrapper {
-  background-color: #1e1f25;
-  border-radius: 10px;
-  display: block;
-  height: auto;
-  margin: 0 0 31px;
-  padding: 30px 30px;
-  position: relative;
-}
-section .main_wall .comment_thread .comment_wrapper.hidden {
-  display: none;
-}
-section .main_wall .comment_thread .comment_wrapper .name {
-  color: #a3a3ff;
-  font: 13px/15px 'Roboto-Regular', sans-serif;
-}
-section .main_wall .comment_thread .comment_wrapper p {
-  background: transparent;
-  color: #ffffff;
-  font-style: italic;
-  font: 16px/25px 'Roboto-Italic', sans-serif;
-  margin: 0px auto 15px;
-}
-section .main_wall .comment_thread .comment_wrapper .reply_content {
-  border-radius: 10px;
-  padding: 0 0px 24px 30px;
-}
-section .main_wall .comment_thread .comment_wrapper .reply_content .replies {
-  margin: 35px 0 0;
-}
-section .main_wall .comment_thread .comment_wrapper .comments_replies {
-  margin-bottom: 16px;
-  padding-left: 30px;
-}
-section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area {
-  background: #3a3c46;
-  border-radius: 10px;
-  font: 16px/25px 'Roboto-Italic', sans-serif;
-  height: 80px;
-  margin: 30px auto;
-  max-width: 978px;
-  padding-left: 15px;
-  position: relative;
-  resize: none;
-  width: 100%;
-}
-section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area:focus {
+section .post form.active {
   border: 1px solid #00a3ff;
 }
-section .main_wall .comment_thread .comment_wrapper .comments_replies .add_reply {
+section .post form.input_error {
+  border: 1px solid #eb5757;
+}
+section .post form textarea {
+  background-color: #3a3c46;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font: 18px/25px "Roboto-Regular", sans-serif;
   height: 38px;
-  margin: 0 0 0;
-  position: absolute;
-  right: 43px;
-  transform: translateY(-97px);
-  width: 100px;
+  margin: 28px 0 11px;
+  max-height: 500px;
+  min-height: 38px;
+  outline: none;
+  padding-right: 20px;
+  position: relative;
+  resize: none;
+  width: 100%;
 }
-section .main_wall .comment_thread .comment_wrapper .actions {
-  transform: translate(-61px, 10px);
-  z-index: 999;
+section .post form button {
+  background-color: #00a3ff;
+  border-radius: 9px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font: 14px/40px "Roboto-Regular", sans-serif;
+  min-width: 100px;
+  transition: all 0.21s ease-in-out;
 }
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .delete_comment {
-  align-items: center;
+section .post form button:hover {
+  background-color: #0050c8;
+}
+section .edit_post.post form {
+  margin-bottom: 30px;
+}
+section .recent {
+  color: #ffffff;
+  font: 16px/19px "Roboto-Regular", sans-serif;
+  margin-bottom: 17px;
+}
+section #comments_thread .comments_wrapper {
   background-color: #32333c;
-  display: inline-flex;
-  float: right;
-  transform: translate(-85px, -37px);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 24px 30px 25px;
 }
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .delete_comment::after {
-  background-image: url('../images/the_wall_sprite_icon.svg');
-  background-position: -16px 10px;
-  background-repeat: no-repeat;
-  content: '';
-  height: 37px;
-  transform: translateY(3px);
-  width: 22px;
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .delete_comment:hover {
-  filter: invert(1);
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .popup {
+section #comments_thread .comments_wrapper .topic_block .delete_container {
+  display: flex;
   align-items: center;
-  background: #32333c;
+}
+section #comments_thread .comments_wrapper .topic_block .delete_container.active .delete_topic_btn {
+  pointer-events: none;
+}
+section #comments_thread .comments_wrapper .topic_block .delete_container.active .confirm_text {
+  display: flex;
+}
+section #comments_thread .comments_wrapper .topic_block .delete_container .confirm_text {
+  display: none;
+}
+section #comments_thread .comments_wrapper .topic_text {
+  color: #ffffff;
+  font: 16px/25px "Roboto-Italic", sans-serif;
+  margin-bottom: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+section #comments_thread .comments_wrapper .topic_block .user,
+section #comments_thread .comments_wrapper .reply_container .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+section #comments_thread .comments_wrapper .topic_block .user .topic_details,
+section #comments_thread .comments_wrapper .reply_container .user .topic_details,
+section #comments_thread .comments_wrapper .topic_block .user .name,
+section #comments_thread .comments_wrapper .reply_container .user .name {
+  align-items: center;
+  color: #a3a3ff;
+  display: flex;
+  font: 14px/16px "Roboto-Regular", sans-serif;
+  justify-content: space-between;
+}
+section #comments_thread .comments_wrapper .topic_block:hover .edit_delete_action,
+section #comments_thread .comments_wrapper .reply_container:hover .edit_delete_action {
+  transition: all 0.21s ease-in-out;
+  opacity: 1;
+  pointer-events: all;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action {
+  display: flex;
+  align-items: center;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action {
+  background-color: #2c2d34;
   border-radius: 4px;
-  border-right: 0;
   border: 1px solid #606066;
+  cursor: pointer;
+  height: 29px;
+  margin-right: 6px;
+  transition: all 0.21s ease-in-out;
+  width: 29px;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action::after,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action::after {
+  background: url("../images/the_wall_sprite_icon.svg") no-repeat;
+  background-position: 0 0;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action:hover,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action:hover {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .edit_action:hover::after,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .edit_action:hover::after {
+  background-position: 0 0;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper {
+  align-items: center;
+  background-color: #2c2d34;
+  border-radius: 4px;
+  border: 1px solid #606066;
+  display: flex;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action {
+  background-color: #2c2d34;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  height: 27px;
+  outline: none;
+  transition: all 0.21s ease-in-out;
+  width: 28px;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action::after,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action::after {
+  background: url("../images//the_wall_sprite_icon.svg") no-repeat -21px 0;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action:hover,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action:hover {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .delete_action:hover::after,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .delete_action:hover::after {
+  background-position: -21px 0;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text {
   color: #ffffff;
   display: none;
-  font: 10px/12px 'Roboto-Medium', sans-serif;
-  height: 37px;
+  font: 10px/12px "Roboto-Medium", sans-serif;
+  gap: 8px;
   margin: 0 8px;
-  padding-left: 6px;
-  position: absolute;
-  right: 0px;
-  transform: translate(71px, -37px);
 }
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .popup .action_button {
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .action {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font: 10px/12px 'Roboto-Medium', sans-serif;
+  font: 10px/12px "Roboto-Medium", sans-serif;
   transition: all 0.21s ease-in-out;
 }
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .popup .action_button:hover {
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .action:hover,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .action:hover {
   opacity: 0.8;
 }
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .popup button {
-  background: transparent;
-  color: #ffffff;
-  border: none;
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container.active .delete_comment {
-  border-radius: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  pointer-events: none;
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container.active .popup {
-  display: flex !important;
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container.active .yes_action {
-  color: #a3a3ff;
-}
-section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container.active .no_action {
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .no_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .no_action,
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .no_action_btn,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .no_action_btn {
   color: #6d7186;
 }
-section button {
-  background-color: #00a3ff;
-  border-radius: 8.86px;
-  border: 1px solid #606066;
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .yes_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .yes_action,
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper .confirm_text .yes_action_btn,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper .confirm_text .yes_action_btn {
+  color: #a3a3ff;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper.active .delete_action,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper.active .delete_action {
+  border-radius: 0;
+  border-right: 1px solid #606066;
+  pointer-events: none;
+}
+section #comments_thread .comments_wrapper .topic_block .edit_delete_action .delete_wrapper.active .confirm_text,
+section #comments_thread .comments_wrapper .reply_container .edit_delete_action .delete_wrapper.active .confirm_text {
+  display: flex !important;
+}
+section #comments_thread .comments_wrapper .topic_block .reply,
+section #comments_thread .comments_wrapper .reply_container .reply {
   color: #ffffff;
-  cursor: pointer;
-  line-height: 32px;
-  margin-right: 8px;
-  opacity: 0.9;
-  padding: 0 8px;
-  transition: 0.21s;
+  font: 16px/25px "Roboto-Italic", sans-serif;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
-section button:hover {
-  opacity: 0.8;
+section #comments_thread .comments_wrapper .reply_wrapper .reply_container {
+  margin-top: 30px;
 }
-section button.edit_comment {
+section #comments_thread .comments_wrapper .reply_wrapper .reply_container .delete_container {
+  display: flex;
   align-items: center;
-  background-color: #32333c;
-  display: inline-flex;
-  margin: -37px auto;
-  position: absolute;
-  right: 138px;
-  bottom: 35px;
 }
-section button.edit_comment::after {
-  background-image: url('../images/the_wall_sprite_icon.svg');
-  background-repeat: no-repeat;
-  content: '';
-  background-position: 6px 10px;
-  height: 37px;
-  transform: translateY(3px);
-  width: 22px;
+section #comments_thread .comments_wrapper .reply_wrapper .reply_container .delete_container.active .delete_response_btn {
+  pointer-events: none;
 }
-section button.edit_comment:hover {
-  filter: invert(1);
+section #comments_thread .comments_wrapper .reply_wrapper .reply_container .delete_container.active .confirm_text {
+  display: flex;
 }
-section button.reply {
-  font: 12px/25px 'Roboto-Regular', sans-serif;
-  line-height: 24px;
-  transform: translateY(15px);
-  width: 115px;
+section #comments_thread .comments_wrapper .reply_wrapper .reply_container .delete_container .confirm_text {
+  display: none;
 }
-@media screen and (max-width: 535px) {
-  section .main_wall {
-    overflow-x: hidden;
-  }
-  section .main_wall .comment_thread .comment_wrapper .actions {
-    transform: translate(50px, 10px);
-  }
-  section .main_wall .comment_thread .comment_wrapper .actions .delete_comment_container .popup {
-    width: 100%;
+section #comments_thread .comments_wrapper .edit_comment form textarea {
+  background-color: #3a3c46;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font: 18px/25px "Roboto-Regular", sans-serif;
+  height: 38px;
+  margin: 28px 0 11px;
+  max-height: 500px;
+  min-height: 38px;
+  outline: none;
+  padding-right: 20px;
+  position: relative;
+  resize: none;
+  width: 100%;
+}
+.hidden {
+  display: none !important;
+}
+@media only screen and (max-width: 1024px) {
+  section {
+    margin: 48px 35px;
   }
 }
-@media screen and (max-width: 400px) {
-  section .main_wall .add_post {
-    padding: 10px;
+@media only screen and (max-width: 768px) {
+  #profile_name {
+    display: none;
   }
-  section .main_wall .comment_thread .comment_wrapper {
-    padding: 30px 15px;
-  }
-  section .main_wall .comment_thread .comment_wrapper .name {
-    font: 11px/15px 'Roboto-Regular', sans-serif;
-  }
-  section .main_wall .comment_thread .comment_wrapper .reply_content .replies {
-    margin: 25px 0 0;
-  }
-  section .main_wall .comment_thread .comment_wrapper .comments_replies {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  section .main_wall .comment_thread .comment_wrapper .comments_replies .add_comment_area {
-    font: 12px/15px 'Roboto-Italic', sans-serif;
-    padding-left: 10px;
+  #log_out_btn {
+    color: transparent !important;
+    padding: 14px 0 0 26px;
+    width: 35px;
   }
 }

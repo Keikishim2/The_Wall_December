@@ -1,3 +1,9 @@
+/**
+ * DOCU This function validates the first name entered in the field
+ * Last Updated: December 28, 2022
+ * @param input 
+ * @author Kei
+*/
 function checkFirstname(input){
     const name = /^[a-zA-Z]+$/;
     if(input.value.match(name)){
@@ -7,6 +13,12 @@ function checkFirstname(input){
     }
 }
 
+/**
+ * DOCU This function validates the last name entered in the field
+ * Last Updated: December 28, 2022
+ * @param input 
+ * @author Kei
+*/
 function checkLastname(input){
     const name = /^[a-zA-Z]+$/;
     if(input.value.match(name)){
@@ -16,6 +28,12 @@ function checkLastname(input){
     }
 }
 
+/**
+ * DOCU This function validates first name, last name, email, and password
+ * Last Updated: December 28, 2022
+ * @param event 
+ * @author Kei
+*/
 signup_form.addEventListener("submit", function(e){
     e.preventDefault();
 

@@ -28,7 +28,7 @@ nav {
   display: flex;
   height: 62px;
   justify-content: space-between;
-  margin: -18px auto 42px;
+  margin: 0 auto 42px;
   width: 100%;
 }
 nav > span {
@@ -178,7 +178,7 @@ section .recent {
   margin-bottom: 17px;
 }
 section #comments_thread .comments_wrapper {
-  background-color: #32333c;
+  background-color: #1e1f25;
   border-radius: 10px;
   margin-bottom: 30px;
   padding: 24px 30px 25px;

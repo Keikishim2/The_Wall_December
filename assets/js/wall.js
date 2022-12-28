@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /**
- * DOCU: This function populates the new post on the wall
+ * DOCU This function populates the new post on the wall
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function addPost(e){
     e.preventDefault();
     const text_post = document.querySelector("#text_post");
@@ -37,11 +37,11 @@ function addPost(e){
 }
 
 /**
- * DOCU: This function enables the user to add comments and replies to the post as well edit and delete
+ * DOCU This function enables the user to add comments and replies to the post as well as edit and remove post
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function addCommentsReplies(e){
     e.preventDefault();
     const comment_form = e.target;
@@ -67,43 +67,43 @@ function addCommentsReplies(e){
 }
 
 /**
- * DOCU: This function shows the popup for delete confirmation
+ * DOCU This function shows confirm delete popup once the button is clicked
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function popupDelete(e){
     const delete_action = e.target;
     delete_action.closest(".delete_wrapper").classList.toggle("active");
 }
 
 /**
- * DOCU: This function deletes the entire post for the
+ * DOCU This function removes the entire post once YES is clicked
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function deletePost(e){
     const yes_action = e.target;
     yes_action.closest(".comments_wrapper").remove();
 }
 
 /**
- * DOCU: This function deletes the replies on the wall
+ * DOCU This function removes the comments and replies on the wall
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function deleteCommentsReplies(e){
     e.target.closest(".reply_wrapper").remove();
 }
 
 /**
- * DOCU: This function edits the posts and replies on the wall
+ * DOCU This function enables the user to edit post and comments
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function editCommentsReplies(e){
     const edit_action = e.target;
     const comment_text = edit_action.closest(".comments_wrapper").querySelector(".comment_text");
@@ -114,11 +114,11 @@ function editCommentsReplies(e){
 }
 
 /**
- * DOCU: This function saves and updates the new post
+ * DOCU This function enables the user to save the updated post and comments
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function saveCommentsReplies(e){
     e.preventDefault();
 
@@ -137,11 +137,11 @@ function saveCommentsReplies(e){
 }
 
 /**
- * DOCU: This function enables the user to edit the reply
+ * DOCU This function enables the user to edit their replies
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function editCommentsReplies(e){
     const edit_reply_btn = e.target;
     const reply = edit_reply_btn.closest(".reply_wrapper").querySelector(".reply");
@@ -152,11 +152,11 @@ function editCommentsReplies(e){
 }
 
 /**
- * DOCU: This function enables the user to save and update the reply
+ * DOCU This function enables the user to save their updated replies on the post
  * Last Updated: December 28, 2022
- * @param e - the event object
+ * @param e - event
  * @author Kei
- */
+*/
 function saveReplies(e){
     e.preventDefault();
 
